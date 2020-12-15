@@ -1,0 +1,7 @@
+<p>
+  file-upload-download works!
+</p>
+
+<div>File Upload</div>
+<input type="file" (change)="handleFileInput($event.target.files)">
+<button type="button" (click)="uploadAndSend()">Upload File</button>

@@ -1,0 +1,14 @@
+<input type="text" [(ngModel)]="searchText">
+<button (click)="search()">Search</button>
+<table>
+  <tr>
+    <td><b>Title</b></td> 
+    <td><b>Description</b></td>
+  </tr>
+  <tr>
+    <td><div *ngFor="let note of notesList">
+      {{note.title}} - {{note.description}}
+    </div>
+    </td>
+  </tr>
+</table>

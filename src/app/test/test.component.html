@@ -1,0 +1,21 @@
+<div>
+  <h4>{{message}}</h4>
+</div>
+
+<form [formGroup] = "myForm" (ngSubmit)="onSubmit()">
+  <div>
+    <div *ngIf="myForm.controls['title'].touched && myForm.controls['title'].invalid">
+    <div *ngIf="myForm.controls['title']?.errors?.required" [ngStyle]="{color:'red'}">Title is mandatory</div>
+    </div>
+  </div>
+  <div>
+    <div *ngIf="myForm.controls['description'].touched && myForm.controls['description'].invalid">
+    <div *ngIf="myForm.controls['description'].errors?.required" [ngStyle]="{color: 'red'}">Description is mandatory</div>
+    </div>
+  </div>
+  Title<input type="text" formControlName="title"><br/>
+  Description<input type="text" formControlName="description"><br/>
+  Tags<input type="text" formControlName="tags"><br/>
+  Remainder<input type="date" formControlName="remainder"><br/>
+  <button type="submit" [disabled]="myForm.invalid">Submit</button>
+</form>
